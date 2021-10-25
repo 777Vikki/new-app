@@ -6,7 +6,7 @@ export class NewsItem extends Component {
         return (
             <div className="my-3">
                 <div className="card" style={{width: "18rem"}}>
-                    <img src={imageUrl? imageUrl : 'https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1099495_800x450.jpg'} className="card-img-top" alt="..."/>
+                    <img src={imageUrl} onError={(e)=>{e.target.onerror = null; e.target.src="https://images.livemint.com/img/2021/10/25/600x338/MINI_1635156873204_1635156895423.jpg"}} className="card-img-top" alt="..."/>
                     <div className="card-body">
                         <h5 className="card-title">{title}...</h5>
                         <p className="card-text">{description}...</p>
