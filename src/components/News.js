@@ -2,6 +2,93 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export class News extends Component {
+    articles = [
+        {
+            "source": {
+                "id": "news24",
+                "name": "News24"
+            },
+            "author": "Khanyiso Tshwaku",
+            "title": "Match-fixing lawyer hits Ethy Mbhalati's SJN testimony for six",
+            "description": "Lawyer David Woodhouse said banned Titans paceman Ethy Mbhalati misled the Cricket for Social Justice and Nation-building hearings by saying he wasn't correctly advised by their law firm.",
+            "url": "https://www.news24.com/sport/Cricket/match-fixing-lawyer-hits-ethy-mbhalatis-sjn-testimony-for-six-20211025",
+            "urlToImage": "https://cdn.24.co.za/files/Cms/General/d/11382/6ef10185f8b641ac9aaaff0e2ae017ec.jpg",
+            "publishedAt": "2021-10-25T13:51:00+00:00",
+            "content": "<ul><li>Lawyer David Woodhouse said banned Titans paceman Ethy Mbhalati was dishonest in how he portrayed Tabacks's involvement in the 2015 Ram Slam T20 match-fixing investigations.</li><li>Mbhalati … [+3254 chars]"
+        },
+        {
+            "source": {
+                "id": "bbc-sport",
+                "name": "BBC Sport"
+            },
+            "author": "BBC Sport",
+            "title": "'I don't fight the responsibility' - meet South Africa's cricketing history-maker",
+            "description": "Temba Bavuma has already made history by becoming South Africa captain. Now he is chasing more at the T20 World Cup.",
+            "url": "http://www.bbc.co.uk/sport/cricket/58959830",
+            "urlToImage": "https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/31F8/production/_121129721_temba_bavuma_graphic_getty.jpg",
+            "publishedAt": "2021-10-25T12:07:27.2614187Z",
+            "content": "<table><tr><th>ICC Men's T20 World Cup: South Africa v West Indies</th></tr>\r\n<tr><td>Venue: Dubai International Cricket Stadium Date: 26 October Time: 11:00 BST</td></tr><tr><td>Coverage: BBC Radio … [+6026 chars]"
+        },
+        {
+            "source": {
+                "id": "al-jazeera-english",
+                "name": "Al Jazeera English"
+            },
+            "author": "Al Jazeera",
+            "title": "Kashmiris beaten, cricketer abused after India loses to Pakistan",
+            "description": "Kashmiri students assaulted and bowler Mohammed Shami faces online abuse after Pakistan’s win at T20 World Cup in Dubai.",
+            "url": "http://www.aljazeera.com/news/2021/10/25/kashmiri-students-mohammed-shami-india-pakistan-t20-match-online-abuse",
+            "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2021/10/AP21297621466763.jpg?resize=1200%2C630",
+            "publishedAt": "2021-10-25T11:58:27Z",
+            "content": "Before the India-Pakistan Twenty-20 World Cup cricket match in the United Arab Emirates on Sunday, the Indian team took a knee in solidarity with the Black Lives Matter (BLM) movement.\r\nIndia lost th… [+5034 chars]"
+        },
+        {
+            "source": {
+                "id": "abc-news-au",
+                "name": "ABC News (AU)"
+            },
+            "author": "ABC News",
+            "title": "England star all-rounder Ben Stokes added to Ashes squad",
+            "description": "Star England all-rounder Ben Stokes is given the all clear to return to competitive cricket after a finger injury and will be part of the Ashes squad to take on Australia in the upcoming series.",
+            "url": "http://www.abc.net.au/news/2021-10-25/ben-stokes-added-to-england-ashes-squad/100567642",
+            "urlToImage": "https://live-production.wcms.abc-cdn.net.au/e9f0366f76e9612bc635ef1cac2c8e4f?impolicy=wcms_crop_resize&cropH=1232&cropW=2188&xPos=0&yPos=87&width=862&height=485",
+            "publishedAt": "2021-10-25T08:23:28Z",
+            "content": "England's Ashes chances have received a boost, with news that star all-rounder Ben Stokes has been added to the team's squad for the upcoming Ashes series.\r\nStokes took time out earlier this year to … [+338 chars]"
+        },
+        {
+            "source": {
+                "id": "espn-cric-info",
+                "name": "ESPN Cric Info"
+            },
+            "author": null,
+            "title": "PCB hands Umar Akmal three-year ban from all cricket | ESPNcricinfo.com",
+            "description": "Penalty after the batsman pleaded guilty to not reporting corrupt approaches | ESPNcricinfo.com",
+            "url": "http://www.espncricinfo.com/story/_/id/29103103/pcb-hands-umar-akmal-three-year-ban-all-cricket",
+            "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1099495_800x450.jpg",
+            "publishedAt": "2020-04-27T11:41:47Z",
+            "content": "Umar Akmal's troubled cricket career has hit its biggest roadblock yet, with the PCB handing him a ban from all representative cricket for three years after he pleaded guilty of failing to report det… [+1506 chars]"
+        },
+        {
+            "source": {
+                "id": "espn-cric-info",
+                "name": "ESPN Cric Info"
+            },
+            "author": null,
+            "title": "What we learned from watching the 1992 World Cup final in full again | ESPNcricinfo.com",
+            "description": "Wides, lbw calls, swing - plenty of things were different in white-ball cricket back then | ESPNcricinfo.com",
+            "url": "http://www.espncricinfo.com/story/_/id/28970907/learned-watching-1992-world-cup-final-full-again",
+            "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg",
+            "publishedAt": "2020-03-30T15:26:05Z",
+            "content": "Last week, we at ESPNcricinfo did something we have been thinking of doing for eight years now: pretend-live ball-by-ball commentary for a classic cricket match. We knew the result, yes, but we tried… [+6823 chars]"
+        }
+    ]
+    constructor() {
+        super();
+        this.state = {
+            articles: this.articles,
+            loading: false
+        }
+    }
     render() {
         return (
             <div className="container my-3">
