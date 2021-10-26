@@ -27,7 +27,7 @@ export class News extends Component {
     }
 
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=fa9f24694f0049a291a78e759be894ff&page=1&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=fa9f24694f0049a291a78e759be894ff&page=$${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         this.setState({
             loading: true
         });
@@ -78,7 +78,7 @@ export class News extends Component {
                 <h2 className="text-center">NewsMonkey - Top Headlines</h2>
                 {this.state.loading && <Spinner />}
                 <div className="row">
-                    {!this.state.loading && this.state.articles.map((element) => {
+                    {!this.state.loading && this.state.articles && this.state.articles.map((element) => {
                        return <div key={element.url} className="col-md-4">
                             <NewsItem title={element.title?element.title.slice(0, 45):''} description={element.description?element.description.slice(0, 88):''} imageUrl={element.urlToImage} newsUrl={element.url} />
                         </div>    
